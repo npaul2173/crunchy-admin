@@ -1,15 +1,19 @@
 import { Icon } from '@chakra-ui/react';
-import { MdBarChart, MdPerson, MdHome, MdLock, MdOutlineShoppingCart } from 'react-icons/md';
+import { MdBarChart, MdTableView, MdPerson, MdHome, MdLock, MdOutlineShoppingCart, MdManageAccounts  } from 'react-icons/md';
 
 // Admin Imports
 import MainDashboard from 'views/admin/default';
 import NFTMarketplace from 'views/admin/marketplace';
 import Profile from 'views/admin/profile';
 import DataTables from 'views/admin/dataTables';
+import { Partners } from 'views/admin/partnerDataTables/';
+import AdminOne from 'views/admin/adminOne';
 import RTL from 'views/admin/rtl';
 
 // Auth Imports
 import SignInCentered from 'views/auth/signIn';
+import TestAdmin from 'views/auth/myAdmin';
+
 
 const routes = [
 	{
@@ -35,6 +39,13 @@ const routes = [
 		component: DataTables
 	},
 	{
+		name: 'Partner Tables',
+		layout: '/admin',
+		icon: <Icon as={MdTableView} width='20px' height='20px' color='inherit' />,
+		path: '/partner-data-tables',
+		component: Partners
+	},
+	{
 		name: 'Profile',
 		layout: '/admin',
 		path: '/profile',
@@ -54,7 +65,21 @@ const routes = [
 		path: '/rtl-default',
 		icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
 		component: RTL
-	}
+	},
+	{
+		name: 'Test Admin',
+		layout: '/auth',
+		path: '/test-admin',
+		icon: <Icon as={MdManageAccounts} width='20px' height='20px' color='inherit' />,
+		component: TestAdmin
+	},
+	{
+		name: 'Partner',
+		layout: '/admin',
+		path: '/admin-one',
+		icon: <Icon as={MdManageAccounts} width='20px' height='20px' color='inherit' />,
+		component: AdminOne
+	},
 ];
 
 export default routes;
